@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Clown 分层</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="hd">
+    <div class="t1">Clown Splitter</div>
+    <div class="t2">KeyShot clown pass → 按色块拆分 rgba 层</div>
+  </header>
+
+  <section class="card">
+    <div class="fld">
+      <label>Clown</label>
+      <select id="clownSel" class="grow"></select>
+      <button id="scanBtn" class="icon" title="重新扫描文档图层">⟳</button>
+    </div>
+    <div class="fld">
+      <label>RGBA</label>
+      <select id="rgbaSel" class="grow"></select>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="fld">
+      <label>取样</label>
+      <select id="modeSel" class="grow">
+        <option value="wand">魔棒（推荐）</option>
+        <option value="range">色彩范围</option>
+      </select>
+    </div>
+    <div class="fld">
+      <label>容差</label>
+      <input id="fuzz" type="range" min="0" max="120" step="1" value="32">
+      <span id="fuzzOut" class="val">32</span>
+    </div>
+    <div class="fld">
+      <label>合并近色</label>
+      <input id="merge" type="range" min="4" max="40" step="1" value="12">
+      <span id="mergeOut" class="val">12</span>
+    </div>
+    <div class="fld">
+      <label>边缘偏移</label>
+      <input id="shrink" type="range" min="-3" max="3" step="1" value="0">
+      <span id="shrinkOut" class="val">0</span>
+    </div>
+    <div class="fld">
+      <label>最小面积</label>
+      <input id="minPct" type="range" min="2" max="300" step="1" value="5">
+      <span id="minOut" class="val">0.05%</span>
+    </div>
+    <div class="chks">
+      <label><input id="optContig" type="checkbox"> 连续</label>
+      <label><input id="optAA" type="checkbox" checked> 抗锯齿</label>
+      <label><input id="optGroup" type="checkbox" checked> 收进分组</label>
+      <label><input id="optHideClown" type="checkbox" checked> 隐藏 clown</label>
+    </div>
+  </section>
+
+  <button id="analyzeBtn" class="btn">① 分析色块</button>
+
+  <section class="listwrap">
+    <div class="lhead">
+      <span class="h-chk"></span>
+      <span class="h-sw"></span>
+      <span class="h-meta">颜色 / 占比 / 近色距离</span>
+      <span class="h-name">图层名</span>
+    </div>
+    <div id="colorList" class="lbody">
+      <div class="empty">点「① 分析色块」扫描 clown 的颜色。</div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <button id="runBtn" class="btn primary" disabled>② 生成图层</button>
+    <div id="log" class="log"></div>
+  </div>
+
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
