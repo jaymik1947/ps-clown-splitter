@@ -1,0 +1,17 @@
+# 内部工作数据
+.workbuddy/
+
+# 验证产物（本地生成的预览图）
+out/
+
+# 测试素材
+*.psd
+*.psb
+
+# Python
+__pycache__/
+*.pyc
+
+# 系统
+.DS_Store
+Thumbs.db
