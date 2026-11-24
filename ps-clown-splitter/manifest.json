@@ -1,0 +1,38 @@
+{
+  "id": "com.clownsplit.panel",
+  "name": "Clown Splitter",
+  "version": "1.0.0",
+  "main": "index.html",
+  "manifestVersion": 5,
+  "host": [
+    {
+      "app": "PS",
+      "minVersion": "24.0.0"
+    }
+  ],
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "clownSplitPanel",
+      "label": {
+        "default": "Clown 分层"
+      },
+      "minimumSize": {
+        "width": 300,
+        "height": 300
+      },
+      "maximumSize": {
+        "width": 1600,
+        "height": 1600
+      },
+      "preferredDockedSize": {
+        "width": 340,
+        "height": 680
+      },
+      "preferredFloatingSize": {
+        "width": 380,
+        "height": 740
+      }
+    }
+  ]
+}
